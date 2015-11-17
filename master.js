@@ -25,55 +25,6 @@
                 .attr('align', 'left');
     });
 
-/*    $(document).ready(function() {
-        setTimeout(function() {
-
-            var reloadPage = function() {
-                setTimeout(function() {
-                    window.location.reload();
-                }, 1000)
-            };
-
-            setInterval(function() {
-
-                $(document)
-                    .find("a[href^='job/'][href*='/build'], a[href='/cancelQuietDown']")
-                    .each(function() {
-
-                        var $this = $(this);
-
-                        if ($this.data('forcePostInstrumented')) {
-                            return;
-                        }
-
-                        $this.data('forcePostInstrumented', true).click(function() {
-
-                            $.post($this.prop('href')).done(reloadPage);
-
-                            return false;
-                        });
-                    });
-            }, 250);
-
-            // top page or view page only
-            if ((window.location.pathname === '/') || /\/view\/\w+\/?$/.test(window.location.pathname)) {
-
-                var countExecutingJobs = function() {
-                    return $('#executors .progress-bar').length;
-                };
-
-                var executingJobNum = countExecutingJobs();
-
-                setInterval(function() {
-                    if (executingJobNum !== countExecutingJobs()) {
-                        reloadPage();
-                    }
-                }, 1000);
-            }
-
-        }, 1000);
-    });*/
-
     $(document).ready(function() {
 
         var movies = [ 'webm', 'mp4', 'ogg', 'flv' ];

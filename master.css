@@ -171,7 +171,7 @@ body>tr:first-of-type {
     border-bottom: 1px solid rgba(0,0,0,.1)!important;
 }
 
-table[style="margin-top: 1em; margin-left:1em;"] td:not(.no-wrap) {
+table[style="margin-top: 1em; margin-left:1em;"] td:not(.no-wrap), table[style="margin-top: 1em; margin-left: 1em;"] td:not(.no-wrap) {
     padding-top: 24px;
 }
 
@@ -358,7 +358,7 @@ table {
 }
 
 .task img.icon-edit-delete{
-	display: none;
+    display: none;
 }
 
 td.pane,tr.build-row>td {
@@ -420,10 +420,6 @@ button {
     float: right;
     clear: right;
 }
-/*
-.icon-notepad {
-    display: none;
-}*/
 
 a.task-icon-link {
     padding-left: 18px;
@@ -453,11 +449,16 @@ a.icon-up {
 table[style="margin-left:1em;"] img[style="width: 48px; height: 48px; margin-right:1em;"],
 table[style="margin-left:1em;"] td[style="vertical-align:middle"],
 .build-rss-links {
-	display: none;
+    display: none;
 }
 
-a[href*=newJob].task-icon-link {
+a[href*=newJob].task-icon-link, a[href*=new].task-icon-link  {
     background: url(img/newjob.png) no-repeat!important;
+    background-size: contain!important;
+}
+
+a[href*=/move].task-icon-link {
+    background: url(img/move.png) no-repeat!important;
     background-size: contain!important;
 }
 
@@ -552,17 +553,17 @@ a[href*=configure].task-icon-link:not(.icon-next):not(.icon-previous), table:not
 }
 
 a[href*=configure]:not(.yuimenuitemlabel):not(.icon-xlg) img:not(.icon-xlg) {
-	display: none;
+    display: none;
 }
 
 table:not(#management-links) a[href*=configure]:not(.task-link):not(.task-icon-link):not(.yuimenuitemlabel) {
-	height: 18px;
-	width: 18px;
-	display: block;
+    height: 18px;
+    width: 18px;
+    display: block;
 }
 
 a#description-link img.icon-notepad {
-	display: none;
+    display: none;
 }
 
 a[href*=rebuild].task-icon-link {
@@ -621,13 +622,13 @@ a[href*=parsed_console].task-icon-link:not(.icon-next):not(.icon-previous), a[hr
 }
 
 .dashboard a[href*=console] img {
-	display: none;
+    display: none;
 }
 
 .dashboard a[href*=console] {
-	height: 18px;
-	width: 18px;
-	display: block;
+    height: 18px;
+    width: 18px;
+    display: block;
 }
 
 a[href*=Delete].task-icon-link:not(.icon-next):not(.icon-previous), a[href*=delete].task-icon-link:not(.icon-next):not(.icon-previous), a[href*=disconnect].task-icon-link {
@@ -657,20 +658,25 @@ a[href*="/change"].task-icon-link:not(.icon-next):not(.icon-previous) {
 .pane a[href*="/computer"]:not(.stop-button-link) {
     background: url(img/computer.png) no-repeat!important;
     background-size: contain!important;
-	padding-left: 15px;
+    padding-left: 15px;
+}
+
+table#computers a[href*="/computer"] {
+    background: transparent!important;
+    background-size: contain!important;
 }
 
 .pane a.stop-button-link {
     background: url(img/cancel.png) no-repeat!important;
     background-size: contain!important;
-	height: 17px;
-	width: 17px;
-	display: block;
+    height: 17px;
+    width: 17px;
+    display: block;
 }
 
 .pane a[href*="/computer"] img.icon-computer,
 .pane a.stop-button-link img.icon-stop {
-	display: none;
+    display: none;
 }
 
 div.task a[href="#"]:first-child {
@@ -738,7 +744,15 @@ td:first-child:not(.setting-description) > a[href="ws/"] {
     display: block!important;
 }
 
-a[href="ws/"] img {
+table.fileList tr td{
+    padding-top: 10px!important;
+}
+
+table.fileList td.fileSize {
+    padding-right: 10px
+}
+
+a[href="ws/"] img, img.icon-package.icon-xlg, img.icon-clipboard.icon-xlg{
     display: none!important;
 }
 
@@ -748,13 +762,22 @@ td:first-child a[href=changes] {
     padding: 24px!important;
 }
 
-#main-panel>table a[href="lastSuccessfulBuild/artifact/"] {
-    background: url(img/target.png) no-repeat!important;
+#main-panel>table a[href="lastSuccessfulBuild/artifact/"], #main-panel>table a[href="artifact/"] {
+    background: url(img/files.png) no-repeat!important;
     background-size: contain!important;
     padding: 24px!important;
     padding-left: 70px!important;
     display: block!important;
     margin-left: -60px!important;
+}
+
+#main-panel>table a[href*="/testReport/"] {
+    background: url(img/clip.png) no-repeat!important;
+    background-size: contain!important;
+    padding: 20px!important;
+    padding-left: 58px!important;
+    display: block!important;
+    margin-left: -7px!important;
 }
 
 #main-panel>table a[href*="lastSuccessfulBuild/artifact/target/"]:first-child {
@@ -763,16 +786,6 @@ td:first-child a[href=changes] {
     margin-top: -20px;
     color: #505050!important;
 }
-
-#main-panel>table .fileSize {
-    padding-left: 30px!important;
-    display: block!important;
-    margin-top: -20px;
-}
-/*
-#main-panel>table .fileList img,#main-panel>table a[href*="*view*"],#main-panel>table>tbody>tr img[src*=clipboard],#main-panel>table>tbody>tr img[src*=package] {
-    display: none!important;
-}*/
 
 #main-panel>table>tbody a[href*=".jar"] {
     font-weight: 700!important;
@@ -791,14 +804,6 @@ a[href="ws/"] tr {
 td[style="vertical-align:middle"] a[href="ws/"] {
     background: transparent!important;
 }
-/*
-#main-panel h1 img,a[href="#"] img {
-    display: none;
-}*/
-/*
-textarea {
-    max-width: 500px!important;
-}*/
 
 #systemmessage {
     padding: 10px;
@@ -1039,21 +1044,21 @@ img[src$="images/48x48/aborted.png"],  img[src$="images/48x48/aborted.gif"],  im
 a.help-button[href*="#"] {
     background: url(img/question.png) no-repeat!important;
     background-size: contain!important;
-	height: 18px;
-	width: 18px;
-	display: block;
+    height: 18px;
+    width: 18px;
+    display: block;
 }
 
 a.help-button[href*="#"]:hover {
     background-color: #326ca6!important;
-	border-radius: 20px;
+    border-radius: 20px;
 }
 
 .optional-block-start td {
-	padding: 5px;
+    padding: 5px;
 }
 .optional-block-start:hover {
-	background-color: rgba(0,0,0,.1)!important;
+    background-color: rgba(0,0,0,.1)!important;
 }
 
 a.icon-next {
