@@ -161,6 +161,12 @@ a:hover {
     text-align: left;
 }
 
+a[href*="computer"].task-icon-link {
+    background: url(img/computer.png) no-repeat;
+    background-size: contain;
+}
+
+
 body>tr:first-of-type {
     border-bottom: 1px solid rgba(0,0,0,.1)!important;
 }
@@ -434,6 +440,11 @@ a[href*="/job/"].task-icon-link {
     background-size: contain;
 }
 
+a.icon-up {
+    background: url(img/return.png) no-repeat!important;
+    background-size: contain!important;
+}
+
 #tasks div:nth-child(2) a[href*="/job/"].task-icon-link {
     background: url(img/project.png) no-repeat!important;
     background-size: contain!important;
@@ -485,8 +496,18 @@ a[href*="advanced-build-queue"].task-icon-link {
     background-size: contain!important;
 }
 
-a[href*="jenkinswalldisplay"].task-icon-link {
+a[href*="jenkinswalldisplay"].task-icon-link, a[href*="monitoring"].task-icon-link {
     background: url(img/walldisplay.png) no-repeat!important;
+    background-size: contain!important;
+}
+
+a[href*="request-rename"].task-icon-link:not(.icon-next):not(.icon-previous) {
+    background: url(img/rename.png) no-repeat!important;
+    background-size: contain!important;
+}
+
+a[href*="BuildGraph"].task-icon-link:not(.icon-next):not(.icon-previous) {
+    background: url(img/buildGraph.png) no-repeat!important;
     background-size: contain!important;
 }
 
@@ -515,7 +536,7 @@ a[href="/"].task-icon-link {
     background-size: contain!important;
 }
 
-a[href*=changes].task-icon-link {
+a[href*=changes].task-icon-link:not(.icon-next):not(.icon-previous) {
     background: url(img/paper.png) no-repeat!important;
     background-size: contain!important;
 }
@@ -525,7 +546,7 @@ a[href*="/ws/"].task-icon-link {
     background-size: contain!important;
 }
 
-a[href*=configure].task-icon-link, table:not(#management-links) a[href*=configure]:not(.task-link):not(.yuimenuitemlabel) {
+a[href*=configure].task-icon-link:not(.icon-next):not(.icon-previous), table:not(#management-links) a[href*=configure]:not(.task-link):not(.yuimenuitemlabel) {
     background: url(img/manage.png) no-repeat!important;
     background-size: contain!important;
 }
@@ -564,7 +585,7 @@ a[href*=failure-cause-management].task-icon-link {
     background-size: contain!important;
 }
 
-a[href*=injectedEnvVars].task-icon-link {
+a[href*=injectedEnvVars].task-icon-link:not(.icon-next):not(.icon-previous), a[href*=systemInfo].task-icon-link {
     background: url(img/tag.png) no-repeat!important;
     background-size: contain!important;
 }
@@ -589,6 +610,16 @@ a[href*=console].task-icon-link:not(.icon-next):not(.icon-previous), .dashboard 
     background-size: contain!important;
 }
 
+a[href*=parameters].task-icon-link:not(.icon-next):not(.icon-previous), .dashboard a[href*=console] {
+    background: url(img/parameters.png) no-repeat!important;
+    background-size: contain!important;
+}
+
+a[href*=parsed_console].task-icon-link:not(.icon-next):not(.icon-previous), a[href*=log].task-icon-link  {
+    background: url(img/parsedconsole.png) no-repeat!important;
+    background-size: contain!important;
+}
+
 .dashboard a[href*=console] img {
 	display: none;
 }
@@ -599,7 +630,7 @@ a[href*=console].task-icon-link:not(.icon-next):not(.icon-previous), .dashboard 
 	display: block;
 }
 
-a[href*=Delete].task-icon-link, a[href*=delete].task-icon-link {
+a[href*=Delete].task-icon-link:not(.icon-next):not(.icon-previous), a[href*=delete].task-icon-link:not(.icon-next):not(.icon-previous), a[href*=disconnect].task-icon-link {
     background: url(img/x.png) no-repeat!important;
     background-size: contain!important;
 }
@@ -618,8 +649,7 @@ a[href*="/redeploy"].task-icon-link {
     background: url(img/redeploy.png) no-repeat!important;
     background-size: contain!important;
 }
-
-a[href*="/change"].task-icon-link {
+a[href*="/change"].task-icon-link:not(.icon-next):not(.icon-previous) {
     background: url(img/paper.png) no-repeat!important;
     background-size: contain!important;
 }
