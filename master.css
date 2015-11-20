@@ -124,6 +124,20 @@ a {
     text-decoration: none!important;
 }
 
+a#jenkins-home-link  {
+    background: url(img/cloud_logo.png) no-repeat;
+    background-size: contain;
+    padding-left: 110px;
+}
+
+#jenkins-head-icon {
+    left: 50px;
+}
+
+#jenkins-name-icon {
+    left: 90px;
+}
+
 #login-field a {
     color: #fff!important;
 }
@@ -472,6 +486,11 @@ a[href*="/builds"].task-icon-link {
     background-size: contain!important;
 }
 
+a[href*="shelve"].task-icon-link {
+    background: url(img/shelve.png) no-repeat!important;
+    background-size: contain!important;
+}
+
 a[href="/projectRelationship"].task-icon-link {
     background: url(img/project.png) no-repeat!important;
     background-size: contain!important;
@@ -479,6 +498,11 @@ a[href="/projectRelationship"].task-icon-link {
 
 a[href*="/fingerprint"].task-icon-link {
     background: url(img/finger.png) no-repeat!important;
+    background-size: contain!important;
+}
+
+a[href*="cobertura"].task-icon-link {
+    background: url(img/coverage.png) no-repeat!important;
     background-size: contain!important;
 }
 
