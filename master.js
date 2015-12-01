@@ -81,25 +81,30 @@
             });
         }, 250);
     });
-	
-	$(document).ready(function() {
-		if(window.location.href.indexOf("/login") > -1){
-		  window.scrollTo(0, 0);
-		}
 
-		$(".task .task-icon-link img").each(function() {
-			var attr = $(this).attr('class');
-			if (typeof attr != undefined && attr != null) {
-				var classList = $(this).attr('class').split(/\s+/);
-				var self = this;
-				$.each(classList, function(index, item) {
-					if (item.indexOf("icon") == 0) {
-						$(self).parent("a").addClass(item);
-					}
-				});
-			}
-		});
-	});
+    $(document).ready(function() {
+        if(window.location.href.indexOf("/login") > -1){
+          window.scrollTo(0, 0);
+        }
+
+        $(".task .task-icon-link img").each(function() {
+            var attr = $(this).attr('class');
+            if (typeof attr != undefined && attr != null) {
+                var classList = $(this).attr('class').split(/\s+/);
+                var self = this;
+                $.each(classList, function(index, item) {
+                    if (item.indexOf("icon") == 0) {
+                        $(self).parent("a").addClass(item);
+                    }
+                });
+            }
+        });
+
+        if(window.location.href.indexOf("job") != -1) {
+            $("link[rel='shortcut icon']").attr("href", $("img.icon-blue, img.icon-aborted, img.icon-yellow, img.icon-red").first().attr("src"));
+        }
+
+    });
 
     window.$jq = $; // keep for later use
 
