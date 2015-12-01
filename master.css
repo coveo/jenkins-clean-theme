@@ -125,7 +125,7 @@ a {
 }
 
 a#jenkins-home-link  {
-    background: url(img/coveo_cloud_logo.png) no-repeat;
+    background: url(img/cloud_logo.png) no-repeat;
     background-size: contain;
     padding-left: 110px;
 }
