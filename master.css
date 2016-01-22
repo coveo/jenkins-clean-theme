@@ -1104,3 +1104,7 @@ a.icon-previous {
     background: url(img/rewind.png) no-repeat!important;
     background-size: contain!important;
 }
+
+span.timestamp b {
+    color: #8A8;
+}
