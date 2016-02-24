@@ -1108,3 +1108,7 @@ a.icon-previous {
 span.timestamp b {
     color: #8A8;
 }
+
+#buildHistoryPageNav {
+	z-index: 9999;
+}
